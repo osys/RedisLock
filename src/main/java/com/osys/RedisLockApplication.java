@@ -1,4 +1,4 @@
-package com.osys.redislock;
+package com.osys;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
