@@ -110,7 +110,7 @@ if (redis.call('hexists', KEYS[1], ARGV[1]) == 0) then
 	end; 
 -- 线程 ARGV[1] 获取了 KEYS[1] 锁，释放一个锁，然后查看当前重入次数(持有量)
 local counter = redis.call('hincrby', KEYS[1], ARGV[1], -1); 
-if (counter == 0) then " +
+if (counter == 0) then 
     -- 释放锁后，不再持有锁，删除 KEYS[1] 锁，允许后续别的线程加锁
     redis.call('del', KEYS[1]); 
     return 1; 
