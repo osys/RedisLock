@@ -30,9 +30,8 @@ public class DemoService {
     public void demo() {
         Runnable runnable = () -> {
             // 获取锁
-            long start = System.currentTimeMillis();
             String threadKey = RedisLock.generationUuid();
-            boolean lock = false;
+            boolean lock;
             try {
                 lock = getLock(threadKey);
             } catch (InterruptedException e) {
